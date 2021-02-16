@@ -11,13 +11,20 @@
   </head>
   <body>
     <header>
-      <h1> <a href="{% url 'home' %}"> Welcome to Dango!</a> </h1>
+      <div class="nav-left">
+        <h1> <a href="{% url 'home' %}"> Welcome to Dango!</a> </h1>
+      </div>
+      <div class="nav-right">
+        <a href="{% url 'post_new' %}">New Blog Post</a>
+      </div>
     </header>
-    <nav>
-      <a href="">Login</a>
-      <a href="">Logout</a>
-      <a href="{% url "user_registration" %}">Register Account</a>
-    </nav>
+    {% if user.is_authenticated %}
+      <p>Hi {{user.username}}!</p>
+      <p><a href="{% url 'logout' %}">Logout</a></p>
+    {% else %}
+      <a href="{% url 'login' %}">Log In</a>
+      <a href="{% url 'signup' %}">Register Account</a>
+    {% endif %}
     <div>
       {% block content %}
       {% endblock %}

@@ -1,16 +1,10 @@
 from django.contrib.auth.forms import UserCreationForm
-from django.urls import reverse # can change link name in future
-from django.views.generic import CreateView
-from django.http import HttpResponse
+from django.urls import reverse_lazy # can change link name in future
+from django.views import generic
 
 
 # Create your views here.
-class UserRegistrationView(CreateView):
+class SignUpView(generic.CreateView):
     form_class = UserCreationForm
-    template_name = 'user_registration.html'
-
-    def get_success_url(self):
-        return reverse('home')  # sends user to the success page
-
-def login(request):
-    return HttpResponse('login')
+    success_url = reverse_lazy('login')
+    template_name = 'signup.html'

@@ -16,12 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
-from accounts.views import UserRegistrationView, login
+#from accounts.views import login
 #from django.contrib.auth import login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('', TemplateView.as_view(template_name = 'base.html'),),
-    path('new-user/', UserRegistrationView.as_view(), name = 'user_registration'),
+#    path('new-user/', UserRegistrationView.as_view(), name = 'user_registration'),
     path('', include('blog.urls'), name = 'home'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('', include('accounts.urls')),
 ]

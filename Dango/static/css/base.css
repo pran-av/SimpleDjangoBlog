@@ -1,0 +1,55 @@
+/* static/css/base.css */
+
+/* font-family: 'Bungee', cursive;
+font-family: 'Open Sans', sans-serif; */
+
+*{
+  background-color: #000;
+  color: #fff;
+  padding-left: 0.5em;
+}
+
+header h1 a {
+  font-family: 'Bungee', cursive;
+  color: red;
+}
+
+nav {
+  border: 2px;
+  margin: 0.5em;
+}
+
+nav a {
+  font-family: sans-serif, 'Open Sans';
+  color: blue;
+  border: 1px;
+  border-color: #fff;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+nav a:hover {
+  color: white;
+}
+
+nav a:visited{
+  color: purple;
+}
+
+div {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.post-entry {
+  border: 3px;
+  border-color: white;
+  border-radius: 0.5em;
+  height: auto;
+  width: 33%;
+  padding: 5em;
+}
+
+
+.post-entry h2 a:hover {
+color: red;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Dango: A simple django blog </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  </head>
+  <body>
+    <header>
+      <h1> <a href="{% url 'home' %}"> Welcome to Dango!</a> </h1>
+    </header>
+    <nav>
+      <a href="">Login</a>
+      <a href="">Logout</a>
+      <a href="{% url "user_registration" %}">Register Account</a>
+    </nav>
+    <div>
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>
